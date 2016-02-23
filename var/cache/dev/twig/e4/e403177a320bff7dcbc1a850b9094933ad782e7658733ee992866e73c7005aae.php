@@ -21,20 +21,20 @@ class __TwigTemplate_3d50a977e3baf60c01178e54e1c83dfe5c944521d537218df09378e4ebe
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ca4733bfdf46776a3c24c9e22844490d7fac777e957e5cec38ec2ee1062284b1 = $this->env->getExtension("native_profiler");
-        $__internal_ca4733bfdf46776a3c24c9e22844490d7fac777e957e5cec38ec2ee1062284b1->enter($__internal_ca4733bfdf46776a3c24c9e22844490d7fac777e957e5cec38ec2ee1062284b1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AdresseBundle:Contact:index.html.twig"));
+        $__internal_21e61ad40b609bc250d00c260e9a939cf8af1e438a042268def10441bf8e8312 = $this->env->getExtension("native_profiler");
+        $__internal_21e61ad40b609bc250d00c260e9a939cf8af1e438a042268def10441bf8e8312->enter($__internal_21e61ad40b609bc250d00c260e9a939cf8af1e438a042268def10441bf8e8312_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "AdresseBundle:Contact:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ca4733bfdf46776a3c24c9e22844490d7fac777e957e5cec38ec2ee1062284b1->leave($__internal_ca4733bfdf46776a3c24c9e22844490d7fac777e957e5cec38ec2ee1062284b1_prof);
+        $__internal_21e61ad40b609bc250d00c260e9a939cf8af1e438a042268def10441bf8e8312->leave($__internal_21e61ad40b609bc250d00c260e9a939cf8af1e438a042268def10441bf8e8312_prof);
 
     }
 
     // line 2
     public function block_body($context, array $blocks = array())
     {
-        $__internal_359ff5059b515a1596a1681105667795a2b98248f04bcb302f83d16e7cb8c9f7 = $this->env->getExtension("native_profiler");
-        $__internal_359ff5059b515a1596a1681105667795a2b98248f04bcb302f83d16e7cb8c9f7->enter($__internal_359ff5059b515a1596a1681105667795a2b98248f04bcb302f83d16e7cb8c9f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_87ea30c01f74511db799c0e7cfc6d85839749e3374100c630d2f817ca7b6335e = $this->env->getExtension("native_profiler");
+        $__internal_87ea30c01f74511db799c0e7cfc6d85839749e3374100c630d2f817ca7b6335e->enter($__internal_87ea30c01f74511db799c0e7cfc6d85839749e3374100c630d2f817ca7b6335e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
         echo "<h1>Bienvenue sur votre carnet</h1>
@@ -74,6 +74,8 @@ class __TwigTemplate_3d50a977e3baf60c01178e54e1c83dfe5c944521d537218df09378e4ebe
                 echo "</td>
 \t\t\t\t<td><a href=\"";
                 // line 21
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("affichage", array("id" => $this->getAttribute($context["item"], "id", array()))), "html", null, true);
+                echo "\" class=\"btn btn-info\">afficher</a><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_suppression", array("id" => $this->getAttribute($context["item"], "id", array()))), "html", null, true);
                 echo "\" class=\"btn btn-danger\">supprimer</a></td>
 \t\t\t</tr>
@@ -95,7 +97,7 @@ class __TwigTemplate_3d50a977e3baf60c01178e54e1c83dfe5c944521d537218df09378e4ebe
 ";
         }
         
-        $__internal_359ff5059b515a1596a1681105667795a2b98248f04bcb302f83d16e7cb8c9f7->leave($__internal_359ff5059b515a1596a1681105667795a2b98248f04bcb302f83d16e7cb8c9f7_prof);
+        $__internal_87ea30c01f74511db799c0e7cfc6d85839749e3374100c630d2f817ca7b6335e->leave($__internal_87ea30c01f74511db799c0e7cfc6d85839749e3374100c630d2f817ca7b6335e_prof);
 
     }
 
@@ -111,7 +113,7 @@ class __TwigTemplate_3d50a977e3baf60c01178e54e1c83dfe5c944521d537218df09378e4ebe
 
     public function getDebugInfo()
     {
-        return array (  92 => 27,  86 => 23,  77 => 21,  73 => 20,  69 => 19,  65 => 18,  62 => 17,  58 => 16,  45 => 5,  43 => 4,  40 => 3,  34 => 2,  11 => 1,);
+        return array (  94 => 27,  88 => 23,  77 => 21,  73 => 20,  69 => 19,  65 => 18,  62 => 17,  58 => 16,  45 => 5,  43 => 4,  40 => 3,  34 => 2,  11 => 1,);
     }
 }
 /* {% extends "AdresseBundle::layout.html.twig" %}*/
@@ -134,7 +136,7 @@ class __TwigTemplate_3d50a977e3baf60c01178e54e1c83dfe5c944521d537218df09378e4ebe
 /* 				<td>{{ item.nom }}</td>*/
 /* 				<td>{{ item.prenom }}</td>*/
 /* 				<td>{{ item.email }}</td>*/
-/* 				<td><a href="{{ path('_suppression', {'id': item.id}) }}" class="btn btn-danger">supprimer</a></td>*/
+/* 				<td><a href="{{ path('affichage', {'id': item.id}) }}" class="btn btn-info">afficher</a><a href="{{ path('_suppression', {'id': item.id}) }}" class="btn btn-danger">supprimer</a></td>*/
 /* 			</tr>*/
 /* 		{% endfor %} */
 /* 	</tbody>*/

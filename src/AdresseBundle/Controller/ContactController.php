@@ -49,7 +49,8 @@ class ContactController extends Controller
         $session = $this->get('session')->get('id');
         $carnet = $em->getRepository('AdresseBundle:Carnet')->find($session);
 
-        if(isset($_GET['id'])){
+        if(isset($_GET['id']))
+        {
             $id = $_GET['id'];
             $carnet->setListUtili($id.','.$carnet->getListUtili());
             $em->persist($carnet);
@@ -66,6 +67,27 @@ class ContactController extends Controller
 
         return $this->render('AdresseBundle:Contact:ajout.html.twig', array(
             'personnes' => $utilisateur
+        ));
+    }
+
+    public function AfficherAction()
+    {
+        $utilisateur = new Utilisateur();
+        $session = $this->get('session')->get('id');
+        $em = $this->getDoctrine()->getManager();
+        $id = '';
+
+        $utilisateur = $em->getRepository('AdresseBundle:Utilisateur')->find($session);
+
+        if(isset($_GET['id']))
+        {
+            $id = $_GET['id'];
+            $utilisateur = $em->getRepository('AdresseBundle:Utilisateur')->find($id);
+        }
+
+        return $this->render('AdresseBundle:Contact:afficher.html.twig', array(
+            'personnes' => $utilisateur,
+            'idSession' => $session
         ));
     }
 

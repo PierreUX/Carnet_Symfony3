@@ -139,6 +139,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AdresseBundle\\Controller\\LoginController::ConnexionAction',  '_route' => '_connexion',);
         }
 
+        // affichage
+        if ($pathinfo === '/affichager') {
+            return array (  '_controller' => 'AdresseBundle\\Controller\\ContactController::AfficherAction',  '_route' => 'affichage',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

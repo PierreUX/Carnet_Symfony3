@@ -1,0 +1,32 @@
+{% extends "AdresseBundle::layout.html.twig" %}
+
+{% block title %}Affichage{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+	<p>nom : 
+	{{ personnes.nom }}
+	</p>
+	<p>prénom : 
+	{{ personnes.prenom }}
+	</p>
+	<p>email : 
+	{{ personnes.email }}
+	</p>
+	{% if personnes.id == idSession %}
+	<p>login :
+	{{ personnes.login }}
+	</p>
+	<p>password :
+	{{ personnes.password }}
+	</p>
+	<p>date d'inscription :
+	{{ personnes.dateInscription|date('d/m/Y') }}
+	</p>
+	{% endif %}
+	<a class="btn btn-success" href="{{ path('adresse_homepage') }}" ><i class="glyphicon glyphicon-arrow-left"></i> Retour</a>
+	{% if personnes.id == idSession %}
+	<a class="btn btn-info" href="{{ path('_modification', {'id': personnes.id}) }}">Modification</a>
+	{% endif %}
+</div>
+{% endblock %}

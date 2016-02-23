@@ -25,3 +25,7 @@ inscription:
 _connexion:
     path:     /
     defaults: { _controller: AdresseBundle:Login:Connexion }
+
+affichage:
+    path:   /affichager
+    defaults: { _controller: AdresseBundle:Contact:Afficher }

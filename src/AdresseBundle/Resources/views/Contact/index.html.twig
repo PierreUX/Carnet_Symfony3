@@ -18,7 +18,7 @@
 				<td>{{ item.nom }}</td>
 				<td>{{ item.prenom }}</td>
 				<td>{{ item.email }}</td>
-				<td><a href="{{ path('_suppression', {'id': item.id}) }}" class="btn btn-danger">supprimer</a></td>
+				<td><a href="{{ path('affichage', {'id': item.id}) }}" class="btn btn-info">afficher</a><a href="{{ path('_suppression', {'id': item.id}) }}" class="btn btn-danger">supprimer</a></td>
 			</tr>
 		{% endfor %} 
 	</tbody>
