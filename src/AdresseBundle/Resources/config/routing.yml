@@ -1,0 +1,27 @@
+adresse_homepage:
+    path:     /index
+    defaults: { _controller: AdresseBundle:Contact:index }
+
+_ajout:
+    path:     /ajout
+    defaults: { _controller: AdresseBundle:Contact:Ajout }
+
+_modification:
+    path:     /gestion
+    defaults: { _controller: AdresseBundle:Contact:Modification }
+
+_suppression:
+    path:     /suppr_{id}
+    defaults: { _controller: AdresseBundle:Contact:Suppression }
+
+deconnection:
+    path:     /deconnection
+    defaults: { _controller: AdresseBundle:Login:deconnection }
+
+inscription:
+    path:   /inscription
+    defaults: { _controller: AdresseBundle:Login:inscription }
+
+_connexion:
+    path:     /
+    defaults: { _controller: AdresseBundle:Login:Connexion }

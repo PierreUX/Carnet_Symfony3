@@ -1,0 +1,28 @@
+{% extends "AdresseBundle::layout.html.twig" %}
+
+{% block title %}Ajout de personne{% endblock %}
+
+{% block body %}
+<h1>Ajout d'une personne dans votre canet</h1>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>nom</th>
+			<th>prénom</th>
+			<th>email</th>
+			<th>Gestion</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{% for item in personnes %}
+			<tr>
+				<td>{{ item.nom }}</td>
+				<td>{{ item.prenom }}</td>
+				<td>{{ item.email }}</td>
+				<td><a href="{{ path('_ajout', {'id': item.id}) }}" class="btn btn-info">Ajouter</a></td>
+			</tr>
+		{% endfor %} 
+	</tbody>
+</table>
+{% endblock %}

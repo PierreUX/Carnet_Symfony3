@@ -1,0 +1,29 @@
+{% extends "AdresseBundle::layout.html.twig" %}
+{% block body %}
+<h1>Bienvenue sur votre carnet</h1>
+{% if contact == '' %}
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>nom</th>
+			<th>prénom</th>
+			<th>email</th>
+			<th>gestion</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+		{% for item in personnes %}
+			<tr>
+				<td>{{ item.nom }}</td>
+				<td>{{ item.prenom }}</td>
+				<td>{{ item.email }}</td>
+				<td><a href="{{ path('_suppression', {'id': item.id}) }}" class="btn btn-danger">supprimer</a></td>
+			</tr>
+		{% endfor %} 
+	</tbody>
+</table>
+{% else %}
+	<p class="alert alert-info">{{contact}}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    adresse.example:
+#        class: AdresseBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
