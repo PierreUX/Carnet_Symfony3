@@ -22,19 +22,24 @@ class LoginController extends Controller
         $form->handleRequest($request);
         $error = '';
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
             $em = $this->getDoctrine()->getManager();
             $repository = $em->getRepository('AdresseBundle:Utilisateur');
             $utilisateur = $form->getData();
             $result = $repository->findOneBy(array('login' => $utilisateur->getLogin(), 'password' => $utilisateur->getPassword()));
+            
             if($result)
             {
                 $utilisateur = $result;
                 $session = $request->getSession();
                 if(!$session->has('id'))
                     $session->set('id',$utilisateur->getId());
+                
                 return $this->redirectToRoute('adresse_homepage');
-            }else{
+            }
+            else
+            {
                 $error = 'Login ou mot de passe incorrect';
             }
         }
@@ -97,6 +102,7 @@ class LoginController extends Controller
     {
         $this->get('session')->remove('id');
         return $this->redirectToRoute('_connexion');
+        
         return $this->render('AdresseBundle:Login:deconnection.html.twig', array(
             // ...
         ));

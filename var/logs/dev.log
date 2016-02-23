@@ -6021,3 +6021,7 @@
 [2016-02-23 14:30:36] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
 [2016-02-23 14:30:36] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"b9f99d","_route":"_wdt"},"request_uri":"http://127.0.0.1/carnet/web/app_dev.php/_wdt/b9f99d"} []
 [2016-02-23 14:30:36] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-02-23 14:31:53] request.INFO: Matched route "_connexion". {"route_parameters":{"_controller":"AdresseBundle\\Controller\\LoginController::ConnexionAction","_route":"_connexion"},"request_uri":"http://127.0.0.1/carnet/web/app_dev.php/"} []
+[2016-02-23 14:31:53] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-02-23 14:31:54] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"1a7cd8","_route":"_wdt"},"request_uri":"http://127.0.0.1/carnet/web/app_dev.php/_wdt/1a7cd8"} []
+[2016-02-23 14:31:54] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
