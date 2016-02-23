@@ -98,13 +98,13 @@ class ContactController extends Controller
 
     public function SuppressionAction($id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $utilisateur = $em->getRepository('AdresseBundle:Utilisateur')->find($id);
         $user = new Carnet();
-
         $session = $this->get('session')->get('id');
-
+        $em = $this->getDoctrine()->getManager();
+        
+        $utilisateur = $em->getRepository('AdresseBundle:Utilisateur')->find($id);
         $user = $em->getRepository('AdresseBundle:Carnet')->findOneBy(array('idTitulaire' => $session));
+        
         if(strstr($user->getListUtili(), $id))
         {
             $listUser = str_replace($id.',', '', $user->getListUtili());
